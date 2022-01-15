@@ -13,7 +13,7 @@ const eof = (position: { line: number, col: number, index: number }) => {
   }
 }
 
-interface Char {
+export interface Char {
   value: string
   position: {
     line: number
