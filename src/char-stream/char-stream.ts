@@ -1,3 +1,5 @@
+import { Stream } from '../stream/stream'
+
 export const START_POSITION = {
   line: 1,
   col: 0,
@@ -22,11 +24,7 @@ export interface Char {
   }
 }
 
-export interface CharStream {
-  next(): Char
-  peek(): Char
-  eof():  boolean
-}
+export type CharStream = Stream<Char>
 
 const charStream = (source: string): CharStream => {
   const position = { ...START_POSITION }
