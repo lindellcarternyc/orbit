@@ -3,7 +3,8 @@ import { LPosition } from '../l-position'
 export enum TokenType {
   Keyword = 'KEYWORD',
   Identifier = 'IDENTIFIER',
-
+  BuiltinType = 'BUILT IN TYPENAME',
+  
   // Punctuation
   LParens = 'LEFT PARENS',
   RParens = 'RIGHT PARENS',
@@ -42,6 +43,7 @@ export interface LToken<T extends TokenType, V extends string = string> {
 
 export type KeywordToken = LToken<TokenType.Keyword>
 export type IdentifierToken = LToken<TokenType.Identifier>
+export type BuiltinTypeToken = LToken<TokenType.BuiltinType>
 export type UnrecognizedToken = LToken<TokenType.Unrecognized>
 export type ParenToken = 
   | LToken<TokenType.LParens, '('>
@@ -66,6 +68,7 @@ export type NewlineToken = LToken<TokenType.Newline>
 export type Token = 
   | KeywordToken
   | IdentifierToken
+  | BuiltinTypeToken
   | BoolToken
   | ParenToken
   | BraceToken
